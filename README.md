@@ -88,4 +88,25 @@ The current PUBLIC experience includes a dedicated operating-system view and int
 PUBLIC now includes a Support route that turns interest into four concrete paths: **Connect, Contribute, Pilot, Amplify**. It is intentionally discovery-first: no donation, sponsor, partner, customer, revenue, or outcome claim is made until CORE contains verifiable evidence.
 
 Storytelling principle: **VISION → CURIOSITY → DISCOVERY → CONTRIBUTION → PROOF → VALUE**.
-\n\n## 3D / Roblox visualization sync\n\nThe supplied Roblox Build Specification is now synchronized as the downstream visualization contract for the long-term masterplan. See [docs/ROBLOX_BUILD_SPEC.md](docs/ROBLOX_BUILD_SPEC.md). PUBLIC may visualize and explain the future spatial system, but must not present the physical 1,000 Ha kawasan as already built.\n\n\n## Niche research direction — working hypothesis\n\nCurrent research indicates that generic mosque digitization is already served by national data/services and mosque-management products. PUBLIC therefore should not compete by presenting itself as another mosque administration SaaS.\n\nWorking niche: **a mosque-centered living ecosystem and digital proving ground** — a long-term spatial vision where worship, education, food, ecology, health, local economy, housing, mobility and digital coordination are explored as one connected system. This is a positioning hypothesis, not a claim of product-market fit.\n\nStorytelling rule: every visual object should answer **what is this → why does it matter → what are we researching → what small step can happen now → what proof would move the vision forward?**\n\n\n## Storytelling journey\n\nThe public experience follows **SEE → UNDERSTAND → CONNECT → ENTER**: explore the blueprint, open a research object, understand system relationships, then enter with a real need, capability, pilot or opportunity. The goal is discovery—not asking visitors to read a document.\n
+
+
+## 3D / Roblox visualization sync
+
+The supplied Roblox Build Specification is now synchronized as the downstream visualization contract for the long-term masterplan. See [docs/ROBLOX_BUILD_SPEC.md](docs/ROBLOX_BUILD_SPEC.md). PUBLIC may visualize and explain the future spatial system, but must not present the physical 1,000 Ha kawasan as already built.\n\n\n## Niche research direction — working hypothesis\n\nCurrent research indicates that generic mosque digitization is already served by national data/services and mosque-management products. PUBLIC therefore should not compete by presenting itself as another mosque administration SaaS.\n\nWorking niche: **a mosque-centered living ecosystem and digital proving ground** — a long-term spatial vision where worship, education, food, ecology, health, local economy, housing, mobility and digital coordination are explored as one connected system. This is a positioning hypothesis, not a claim of product-market fit.\n\nStorytelling rule: every visual object should answer **what is this → why does it matter → what are we researching → what small step can happen now → what proof would move the vision forward?**\n\n\n## Storytelling journey\n\nThe public experience follows **SEE → UNDERSTAND → CONNECT → ENTER**: explore the blueprint, open a research object, understand system relationships, then enter with a real need, capability, pilot or opportunity. The goal is discovery—not asking visitors to read a document.\n
+
+## Repository layout and maintenance
+
+- `src/main.jsx` is the active React entry point for all public pages.
+- `src/styles.css` contains the shared responsive design system and local system-font stacks; the site does not request Google Fonts files.
+- Root HTML files provide page-specific titles, descriptions, canonical URLs, and social metadata.
+- `public/robots.txt` and `public/sitemap.xml` are the files published by Vite. Keep the root copies synchronized when editing the sitemap or crawler rules.
+- `vite.config.js` defines every standalone HTML entry that must be included in the production build.
+
+## Local verification
+
+```bash
+npm install
+npm run build
+```
+
+The GitHub Actions workflow builds the site and deploys `dist/` to GitHub Pages after changes reach `main`.

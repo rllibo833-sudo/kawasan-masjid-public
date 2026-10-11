@@ -1,65 +1,42 @@
-# START HERE — PUBLIC
+# START HERE — Kawasan Masjid Public
 
-You have found the **PUBLIC** layer of Kawasan Masjid 1.000 Ha.
+## Live website
+https://rllibo833-sudo.github.io/kawasan-masjid-public/
 
-## What is this project?
+This repository contains the public-facing website for **Kawasan Masjid 1.000 Ha**. The 1,000-hectare concept is a long-term vision, not a claim that the physical development already exists.
 
-Kawasan Masjid 1.000 Ha is a long-term **Islamic Eco-City / mosque-centered community** vision developed through research, digital coordination, validation, and gradual real-world implementation.
+## Project map
 
-Three connected pillars:
+- **PUBLIC website:** this repository — public information, learning resources, discovery, and collaboration.
+- **CORE:** https://github.com/rllibo833-sudo/kawasan-masjid-core — system/runtime, evidence, backend, and economic truth.
+- **Founder-OS / MEMORY:** https://github.com/rllibo833-sudo/Founder-OS — durable founder direction, decisions, and governance.
 
-- digital ecosystem;
-- public/community products;
-- real-world realization.
+These are three layers of one project, not three separate products.
 
-## What should I do first?
+## Where visitors should start
 
-### Just curious
-Open the [live public website](https://rllibo833-sudo.github.io/Landing-page-prototype/).
+- [Learn Islam in the digital age](https://rllibo833-sudo.github.io/kawasan-masjid-public/belajar-islam-digital.html)
+- [How to check a viral hadith](https://rllibo833-sudo.github.io/kawasan-masjid-public/cara-memeriksa-hadis-viral.html)
+- [Sources and research](https://rllibo833-sudo.github.io/kawasan-masjid-public/research.html)
+- [About the project](https://rllibo833-sudo.github.io/kawasan-masjid-public/about.html)
+- [Collaboration opportunities](https://rllibo833-sudo.github.io/kawasan-masjid-public/collaborate.html)
+- [Privacy policy](https://rllibo833-sudo.github.io/kawasan-masjid-public/privacy-policy.html)
 
-It explains the vision, eight connected systems, development journey, current economic experiment, and how to explore the project.
+## Engineering entry points
 
-### I want to inspect what actually exists
-Open the [CORE Project OS](https://github.com/rllibo833-sudo/kawasan-masjid-1000ha).
+- `src/main.jsx` — React pages and shared site shell.
+- `src/styles.css` — responsive visual system.
+- `vite.config.js` — multi-page production build configuration.
+- `public/robots.txt` and `public/sitemap.xml` — published crawler guidance and sitemap.
+- `.github/workflows/pages.yml` — build and GitHub Pages deployment.
 
-CORE is the canonical source for project model, runtime capability, evidence, backend/data logic, and economic truth.
-
-### I have a concrete operational or research need
-The first narrow capability is an **AI-assisted Operations / Research Pack**.
-
-**REQUEST → QUALIFY → FOUNDER GATE → SCOPE & PRICE → DELIVER → ACCEPT → PAY → PROVE**
-
-The initial pilot floor is **Rp100.000**. This is an offer/target, not claimed revenue.
-
-### I want to collaborate
-Start with the [CORE partnership guide](https://github.com/rllibo833-sudo/kawasan-masjid-1000ha/blob/main/PARTNER_WITH_THE_SYSTEM.md).
-
-Bring a concrete capability, real opportunity, research contribution, technical pathway, pilot environment, or implementation route.
-
-### I want to contribute code
-Use the CORE contribution guidance for the system/runtime. This repository is only the public-facing layer.
+Before changing public claims, verify them against documented evidence. Keep the project principle: **No Proof, No Claim**.
 
 ## Current truth
 
-- Customers: **0 verified**
-- Partners: **0 verified**
-- Payment: **Rp0 verified**
-- Physical implementation: **not claimed**
+- Verified customers: 0
+- Verified partners: 0
+- Verified payments: Rp0
+- Physical implementation: not claimed
 
-**NO PROOF, NO CLAIM.**
-
-## The three-repository map
-
-| Layer | Role |
-|---|---|
-| **PUBLIC** | Human-facing discovery, story, ecosystem, and inbound |
-| **CORE** | Runtime, project logic, evidence, backend, AI workforce, economics |
-| **MEMORY** | Durable Founder decisions, constraints, lessons, and recovery context |
-
-## When should I contact the Founder?
-
-Only when the documented path reaches a decision that requires Founder review.
-
-The system is intentionally designed so that basic orientation, project exploration, contribution guidance, and opportunity qualification do not depend on a private conversation.
-
-**Start with the website. Use CORE when you need evidence or participation.**
+These figures describe the documented project status, not forecasts or promises.

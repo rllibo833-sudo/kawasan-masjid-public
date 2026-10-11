@@ -114,6 +114,8 @@ The GitHub Actions workflow builds the site and deploys `dist/` to GitHub Pages 
 
 ## Public article library
 
+Editorial Markdown copies, tags, and maintenance rules are organized in [`docs/articles/README.md`](docs/articles/README.md). Keep this documentation synchronized with the website article data in `src/articles.js`; do not add article files to the repository root.
+
 The public site now includes a dedicated article index at `artikel.html` and ten practical Indonesian-language guides focused on Islamic digital literacy:
 
 - `cek-hoaks-agama-sebelum-membagikan.html` — checking viral religious claims

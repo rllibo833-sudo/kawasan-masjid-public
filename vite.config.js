@@ -7,6 +7,7 @@ export default defineConfig({
   build:{rollupOptions:{input:{
     main:resolve(__dirname,'index.html'),
     digitalIslam:resolve(__dirname,'belajar-islam-digital.html'),
+    hadisViral:resolve(__dirname,'cara-memeriksa-hadis-viral.html'),
     vision:resolve(__dirname,'vision.html'),
     ecosystem:resolve(__dirname,'ecosystem.html'),
     system:resolve(__dirname,'system.html'),

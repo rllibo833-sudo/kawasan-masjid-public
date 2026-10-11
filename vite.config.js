@@ -14,6 +14,7 @@ export default defineConfig({
     research:resolve(__dirname,'research.html'),
     collaborate:resolve(__dirname,'collaborate.html'),
     about:resolve(__dirname,'about.html'),
+    privacy:resolve(__dirname,'privacy-policy.html'),
     support:resolve(__dirname,'support.html')
   }}}
 });

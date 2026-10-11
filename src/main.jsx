@@ -10,7 +10,7 @@ const EMAIL='mailto:fadlibo833@gmail.com?subject=Kawasan%20Masjid%20%E2%80%94%20
 const WHATSAPP='https://wa.me/6283843897058';
 const SAWERIA='https://saweria.co/fadlibo';
 const BASE='/kawasan-masjid-public/';
-const links=[['index.html','Beranda'],['belajar-islam-digital.html','Belajar Islam'],['research.html','Sumber & Rujukan'],['vision.html','Visi Jangka Panjang'],['about.html','Tentang Kami']];
+const links=[['index.html','Beranda'],['belajar-islam-digital.html','Belajar Islam'],['research.html','Sumber & Rujukan'],['about.html','Tentang Kami']];
 const systems=[
  {id:'01',name:'Masjid & Civil Life',short:'LIFE · orientasi',tone:'gold',desc:'Ibadah, layanan sosial, komunitas, dan ruang berkumpul.',icon:Compass},
  {id:'02',name:'Education & Research',short:'KNOW · pengetahuan',tone:'blue',desc:'Pendidikan, riset, eksperimen, dan transfer pengetahuan.',icon:BookOpen},

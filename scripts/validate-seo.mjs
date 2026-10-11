@@ -31,7 +31,7 @@ if (fs.existsSync(sitemapPath)) {
       check(canonical === url, 'Canonical URL differs from sitemap URL: ' + url);
     }
   }
-  check(urls.length === 12, 'Expected 12 stable public URLs; found ' + urls.length);
+  check(urls.length === 23, 'Expected 23 stable public URLs; found ' + urls.length);
 }
 if (fs.existsSync(robotsPath)) {
   const robots = fs.readFileSync(robotsPath, 'utf8');
@@ -46,7 +46,7 @@ for (const file of fs.readdirSync(dist).filter(name => name.endsWith('.html'))) 
   check(/<link rel="canonical" href="[^"]+"/i.test(html), file + ' has no canonical URL');
   check(/<meta name="robots" content="[^"]+"/i.test(html), file + ' has no robots metadata');
 }
-for (const asset of ['images/panduan-periksa-hadis.svg', 'images/panduan-periksa-ayat-quran.svg']) {
+for (const asset of ['images/panduan-periksa-hadis.svg', 'images/panduan-periksa-ayat-quran.svg', 'images/ilustrasi-cek-hoaks-agama.svg', 'images/ilustrasi-cari-sumber-hadis.svg', 'images/ilustrasi-konteks-ayat.svg', 'images/ilustrasi-sumber-belajar.svg', 'images/ilustrasi-tabayyun.svg', 'images/ilustrasi-adab-digital.svg', 'images/ilustrasi-video-potongan.svg', 'images/ilustrasi-keluarga-digital.svg', 'images/ilustrasi-ai-belajar-islam.svg', 'images/ilustrasi-kredibilitas-dakwah.svg']) {
   check(fs.existsSync(path.join(dist, asset)), 'Missing article image: ' + asset);
 }
 if (errors.length) {

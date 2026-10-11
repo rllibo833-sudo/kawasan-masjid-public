@@ -257,3 +257,146 @@ body{font-family:Manrope,Arial,sans-serif;background:#f8fafc;color:#172033}
 
 /* Editorial article discovery */
 .articleSpotlight .fullHeading{max-width:760px;margin-bottom:26px}.articleSpotlightLink{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 30px;border:1px solid rgba(18,60,44,.18);border-radius:18px;background:linear-gradient(110deg,rgba(18,60,44,.07),rgba(190,151,70,.10));color:inherit;text-decoration:none;transition:transform .2s ease,border-color .2s ease}.articleSpotlightLink:hover{transform:translateY(-3px);border-color:rgba(18,60,44,.45)}.articleSpotlightLink span{display:flex;flex-direction:column;gap:10px}.articleSpotlightLink small{font-size:11px;letter-spacing:.12em;font-weight:700;color:#557263}.articleSpotlightLink strong{font-family:Georgia,serif;font-size:clamp(22px,3vw,34px);font-weight:500;line-height:1.2}.articleSpotlightLink em{display:flex;align-items:center;gap:8px;font-style:normal;font-size:14px;font-weight:650}.articleSpotlightLink>svg{width:34px;height:34px;flex-shrink:0;color:#b18a3e}.articleSpotlightLink em svg{width:17px;height:17px}@media(max-width:760px){.articleSpotlightLink{padding:22px 18px;gap:14px}.articleSpotlightLink>svg{width:25px;height:25px}}
+
+
+/* Kawasan Masjid — accessible four-colour baseline (blue, green, white, red) */
+:root{
+ --forest:#123c2c;
+ --forest2:#174b3a;
+ --forest3:#18864b;
+ --paper:#ffffff;
+ --paper2:#f3f7fb;
+ --white:#ffffff;
+ --gold:#4285f4;
+ --gold2:#8ab4f8;
+ --ink:#202b3c;
+ --muted:#64748b;
+ --line:#dce4ed;
+ --blue:#4285f4;
+ --aqua:#34a853;
+ --coral:#ea4335;
+ --violet:#8b5cf6;
+ --yellow:#fbbc04;
+ --shadow:0 18px 55px rgba(26,55,86,.10);
+}
+html{scroll-padding-top:88px}
+body{background:#fff;color:#202b3c;line-height:1.65}
+::selection{background:#d2e3fc;color:#123c2c}
+a{transition:color .18s ease}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid #4285f4;outline-offset:3px}
+.header{background:rgba(18,60,44,.94);border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 4px 24px rgba(15,35,55,.08)}
+.brandMark{border-color:#8ab4f8;color:#fff;background:linear-gradient(145deg,#4285f4,#34a853)}
+.brand small{color:#d6e7dd}
+.nav a{font-size:12px}
+.nav a:hover,.nav .activeNav{background:rgba(66,133,244,.2);color:#fff}
+.nav .navAction{background:#4285f4;color:#fff}
+.nav .navAction:hover{background:#2f6fce}
+.mobileMenu{padding:9px;border-radius:10px}
+.mobileMenu:hover{background:rgba(255,255,255,.12)}
+.button{min-height:44px;font-size:12px;letter-spacing:0}
+.buttonGold,.learningHero .buttonGold,.learningFeatureCopy .buttonGold{background:#34a853;border:1px solid #34a853;color:#fff}
+.buttonGold:hover,.learningHero .buttonGold:hover,.learningFeatureCopy .buttonGold:hover{background:#21863d;border-color:#21863d}
+.buttonOutline{border-color:rgba(255,255,255,.5)}
+.eyebrow{color:#4285f4}
+.eyebrow.light{color:#8ab4f8}
+.learningHero{background:linear-gradient(125deg,#102b43 0%,#123c2c 58%,#17613f 100%)}
+.learningHero .heroBackdrop{background:radial-gradient(circle at 78% 45%,rgba(66,133,244,.22),transparent 29%),radial-gradient(circle at 18% 12%,rgba(52,168,83,.15),transparent 28%),linear-gradient(125deg,#102b43,#123c2c 58%,#17613f)}
+.learningHero .heroCopy h1 em{color:#8ab4f8}
+.learningHero .heroFacts b{color:#b8d4ff}
+.learningHero .buttonOutline:hover{background:rgba(66,133,244,.16);border-color:#8ab4f8}
+.learningVisual{background:radial-gradient(circle at 50% 42%,rgba(66,133,244,.18),transparent 35%),linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.015))}
+.learningArch{border-color:rgba(138,180,248,.72);background:linear-gradient(180deg,rgba(66,133,244,.13),rgba(255,255,255,.015));box-shadow:0 0 0 18px rgba(66,133,244,.04),0 0 0 45px rgba(52,168,83,.035)}
+.learningSun{background:radial-gradient(circle,#d2e3fc,#4285f4 70%,rgba(66,133,244,.25));box-shadow:0 0 65px rgba(66,133,244,.24)}
+.learningBook span{border-color:#b9d2f7;background:linear-gradient(135deg,#fff,#d2e3fc)}
+.learningDome{border-color:rgba(138,180,248,.8)}
+.learningPillar{background:linear-gradient(90deg,rgba(66,133,244,.08),rgba(138,180,248,.42),rgba(66,133,244,.08));border-top-color:rgba(138,180,248,.7)}
+.learningNote{border-color:rgba(138,180,248,.23);color:#8ab4f8}
+.learningNote b{color:#fff}
+.learningNote small{color:#d6e7f5}
+.learningIntro{background:#fff}
+.learningIntro h2,.learningPaths .sectionTop h2,.trustSection h2,.visionTeaser h2{color:#183d2d}
+.learningIntro h2 i,.learningPaths .sectionTop h2 i,.trustSection h2 i{color:#4285f4}
+.learningIntro>p,.learningPaths .sectionTop>p{color:#526174}
+.learningPaths{background:#f3f7fb}
+.learningPathGrid>a{border-color:#e0e7ef;box-shadow:0 2px 6px rgba(23,50,80,.025)}
+.learningPathGrid>a:hover{border-color:#b8d4ff;box-shadow:0 18px 38px rgba(66,133,244,.10)}
+.learningPathGrid>a>span{color:#4285f4}
+.learningPathGrid>a>svg,.trustList article>svg,.aboutLearningGrid article>svg{color:#34a853}
+.learningPathGrid b,.visionTeaser a,.visionAbout a,.aboutLearningGrid a{color:#18864b}
+.learningFeature{background:#123c2c}
+.learningFeatureArt{background:radial-gradient(circle at 50% 45%,rgba(66,133,244,.2),transparent 30%),linear-gradient(135deg,#174b3a,#102b43)}
+.featureCircle{border-color:rgba(138,180,248,.72);box-shadow:0 0 0 18px rgba(66,133,244,.05),0 0 0 38px rgba(52,168,83,.03)}
+.featureCircle svg{color:#8ab4f8}
+.learningFeatureArt>span{color:#dce9f7}
+.learningFeatureCopy .eyebrow{color:#8ab4f8}
+.trustSection{background:#fff}
+.trustSection .eyebrow,.learningIntro .eyebrow,.learningPaths .eyebrow,.visionTeaser .eyebrow,.visionAbout .eyebrow{color:#18864b}
+.trustList article{border-color:#e5ebf2}
+.trustList h3{color:#183d2d}
+.trustList p{color:#526174}
+.visionTeaser,.visionAbout{background:#f3f7fb;border-color:#dce8f5}
+.visionTeaser h2 i{color:#4285f4}
+.visionSeal{border-color:#b8d4ff;color:#2368c4;box-shadow:inset 0 0 0 10px #f3f7fb,inset 0 0 0 11px #d2e3fc}
+.footer{background:#102b43}
+.footerVision span{color:#8ab4f8}
+.footerVision{border-color:rgba(138,180,248,.22);background:rgba(66,133,244,.07)}
+.footerLinks a:hover{color:#8ab4f8}
+.aboutLearningGrid article{border-color:#e0e7ef;box-shadow:0 4px 16px rgba(20,50,80,.025)}
+.articleSpotlightLink{border-color:#d9e6f7;background:linear-gradient(110deg,#f3f7fb,#eef7f0)}
+.articleSpotlightLink:hover{border-color:#8ab4f8;box-shadow:0 14px 35px rgba(66,133,244,.09)}
+.articleSpotlightLink small{color:#4285f4}
+.articleSpotlightLink>svg{color:#34a853}
+.articleRelated .buttonGold{background:#4285f4;border-color:#4285f4}
+.articleRelated .buttonGold:hover{background:#2f6fce;border-color:#2f6fce}
+.contentSection{background:#fff}
+.contentSection:nth-of-type(even){background:#f8fafc}
+.prose p,.contentSection p{line-height:1.85}
+.prose a,.contentSection .prose a{color:#1769d2;text-decoration:underline;text-decoration-color:rgba(66,133,244,.4);text-underline-offset:3px}
+.prose a:hover,.contentSection .prose a:hover{color:#18864b;text-decoration-color:currentColor}
+.libraryRow{border-color:#e0e7ef;box-shadow:0 3px 12px rgba(20,50,80,.025)}
+.libraryVisual{background:linear-gradient(145deg,#174b3a,#102b43)}
+.libraryVisual span{color:#8ab4f8}
+.libraryRow small{color:#4285f4}
+.libraryRow a{color:#1769d2}
+.researchFilters button{transition:background .2s,border-color .2s,color .2s}
+.researchFilters button.activeFilter{background:#4285f4;border-color:#4285f4;color:#fff}
+::marker{color:#34a853}
+@media(max-width:760px){
+ .header{background:rgba(18,60,44,.97)}
+ .nav{background:#fff;border-color:#dce4ed;box-shadow:0 20px 50px rgba(20,50,80,.18)}
+ .nav a{color:#334155}
+ .nav a:hover,.nav .activeNav{color:#174b3a;background:#eaf2ff}
+ .nav .navAction{color:#fff;background:#4285f4}
+ .learningHero{padding-top:105px}
+ .learningHero .heroCopy h1{font-size:clamp(40px,10vw,60px);line-height:1.02}
+ .learningHero .heroCopy>p{font-size:14px;line-height:1.8}
+ .learningHero .heroFacts{gap:14px 22px;margin-top:35px}
+ .learningVisual{min-height:340px}
+ .learningArch{width:min(70%,290px);height:285px}
+ .learningNote{padding:10px 11px;gap:7px}
+ .learningNote small{font-size:9px}
+ .noteTop{right:2%;top:12%}
+ .noteBottom{left:2%;bottom:12%}
+ .learningVisualCaption{font-size:7px;left:12px;right:12px;text-align:center}
+ .learningIntro,.learningPaths,.trustSection{padding:62px 20px}
+ .learningIntro h2,.learningPaths .sectionTop h2,.trustSection h2{font-size:clamp(32px,8vw,44px)}
+ .learningPathGrid>a{min-height:0}
+ .learningFeatureCopy{padding:55px 22px}
+ .visionTeaser{padding:52px 20px}
+ .visionAbout{padding:26px 21px}
+ .articleSpotlightLink{padding:20px 16px}
+ .contentSection{padding:68px 20px}
+ .innerHero h1{font-size:clamp(38px,9vw,52px)}
+}
+@media(max-width:380px){
+ .learningHero .heroButtons{align-items:stretch;flex-direction:column}
+ .learningHero .heroButtons .button{width:100%}
+ .learningVisual{min-height:300px}
+ .learningNote{max-width:145px}
+ .learningNote small{font-size:8px}
+ .articleSpotlightLink>svg{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}

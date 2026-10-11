@@ -7,8 +7,15 @@ const errors = [];
 const check = (ok, message) => { if (!ok) errors.push(message); };
 
 const sitemapPath = path.join(dist, 'sitemap.xml');
+const rootSitemapPath = path.join(process.cwd(), 'sitemap.xml');
+const publicSitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
 const robotsPath = path.join(dist, 'robots.txt');
 check(fs.existsSync(sitemapPath), 'dist/sitemap.xml is missing');
+check(fs.existsSync(rootSitemapPath), 'root sitemap.xml is missing');
+check(fs.existsSync(publicSitemapPath), 'public/sitemap.xml is missing');
+if (fs.existsSync(rootSitemapPath) && fs.existsSync(publicSitemapPath)) {
+  check(fs.readFileSync(rootSitemapPath, 'utf8') === fs.readFileSync(publicSitemapPath, 'utf8'), 'root sitemap.xml and public/sitemap.xml differ');
+}
 check(fs.existsSync(robotsPath), 'dist/robots.txt is missing');
 
 if (fs.existsSync(sitemapPath)) {
@@ -31,7 +38,7 @@ if (fs.existsSync(sitemapPath)) {
       check(canonical === url, 'Canonical URL differs from sitemap URL: ' + url);
     }
   }
-  check(urls.length === 12, 'Expected 12 stable public URLs; found ' + urls.length);
+  check(urls.length === 23, 'Expected 23 stable public URLs; found ' + urls.length);
 }
 if (fs.existsSync(robotsPath)) {
   const robots = fs.readFileSync(robotsPath, 'utf8');
@@ -46,7 +53,7 @@ for (const file of fs.readdirSync(dist).filter(name => name.endsWith('.html'))) 
   check(/<link rel="canonical" href="[^"]+"/i.test(html), file + ' has no canonical URL');
   check(/<meta name="robots" content="[^"]+"/i.test(html), file + ' has no robots metadata');
 }
-for (const asset of ['images/panduan-periksa-hadis.svg', 'images/panduan-periksa-ayat-quran.svg']) {
+for (const asset of ['images/panduan-periksa-hadis.svg', 'images/panduan-periksa-ayat-quran.svg', 'images/ilustrasi-cek-hoaks-agama.svg', 'images/ilustrasi-cari-sumber-hadis.svg', 'images/ilustrasi-konteks-ayat.svg', 'images/ilustrasi-sumber-belajar.svg', 'images/ilustrasi-tabayyun.svg', 'images/ilustrasi-adab-digital.svg', 'images/ilustrasi-video-potongan.svg', 'images/ilustrasi-keluarga-digital.svg', 'images/ilustrasi-ai-belajar-islam.svg', 'images/ilustrasi-kredibilitas-dakwah.svg']) {
   check(fs.existsSync(path.join(dist, asset)), 'Missing article image: ' + asset);
 }
 if (errors.length) {

@@ -110,3 +110,21 @@ npm run build
 ```
 
 The GitHub Actions workflow builds the site and deploys `dist/` to GitHub Pages after changes reach `main`.
+
+
+## Public article library
+
+The public site now includes a dedicated article index at `artikel.html` and ten practical Indonesian-language guides focused on Islamic digital literacy:
+
+- `cek-hoaks-agama-sebelum-membagikan.html` — checking viral religious claims
+- `cara-mencari-sumber-hadis.html` — tracing hadith sources
+- `memahami-konteks-ayat-al-quran.html` — checking Qur'an verse context
+- `memilih-sumber-belajar-islam-online.html` — choosing online learning sources
+- `tabayyun-di-media-sosial.html` — responsible verification and clarification
+- `adab-berbeda-pendapat-di-internet.html` — respectful online disagreement
+- `memeriksa-video-kajian-potongan.html` — checking clipped lecture videos
+- `literasi-digital-keluarga-muslim.html` — family digital literacy
+- `menggunakan-ai-untuk-belajar-islam.html` — using AI with source verification
+- `menilai-kredibilitas-konten-dakwah.html` — evaluating social-media religious content
+
+Each guide has an original SVG illustration, individual metadata and Article structured data, external references, FAQs, and links to related reading. Content is educational, not a fatwa, and the site explicitly states that independent expert review has not yet been completed. The long-term Kawasan Masjid 1,000 Ha vision remains separate from the current public learning focus.

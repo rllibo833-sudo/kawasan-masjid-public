@@ -579,3 +579,13 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 /* Keep desktop navigation grouped together with search at the far edge. */
 .nav{order:2}
 .headerControls{order:3}
+
+
+/* Article table of contents: help readers jump to useful sections instead of endless scrolling. */
+.articleContents{max-width:920px;margin:24px auto 0;padding:0 clamp(18px,5vw,60px);color:#183d2d}
+.articleContents>strong{display:block;margin-bottom:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#65758b}
+.articleContents>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.articleContents a{display:flex;align-items:center;min-height:42px;padding:10px 12px;border:1px solid #dce4ed;border-radius:10px;background:#f8fafc;color:#174b3a;font-size:12px;font-weight:700;line-height:1.35;text-decoration:none}
+.articleContents a:hover{border-color:#8ab4f8;background:#eaf2ff;color:#1769d2}
+#ringkasan,#langkah-pemeriksaan,#sumber-rujukan,#faq{scroll-margin-top:24px}
+@media(max-width:760px){.articleContents{padding:0 18px;margin-top:18px}.articleContents>div{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.articleContents a{font-size:11px;min-height:40px;padding:9px 10px}}

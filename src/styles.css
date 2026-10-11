@@ -575,3 +575,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
  .nav a:hover,.nav .activeNav{color:#174b3a;background:#eaf2ff}
  .nav .navAction{margin:5px 0 0;text-align:center;color:#fff;background:#4285f4}
 }
+
+/* Keep desktop navigation grouped together with search at the far edge. */
+.nav{order:2}
+.headerControls{order:3}

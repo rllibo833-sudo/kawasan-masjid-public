@@ -414,3 +414,79 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .runtimeFallback span{color:#8ab4f8}
 .runtimeFallback .buttonGold{background:#34a853;color:#fff}
 @media(hover:none){.learningPathGrid>a:hover,.articleSpotlightLink:hover,.supportCard:hover{transform:none}}
+
+
+/* Senior UX pass: concise homepage, stronger scanability, less forced scrolling. */
+.learningHero{min-height:0;padding-top:clamp(100px,10vw,135px);padding-bottom:clamp(44px,5vw,68px)}
+.learningHero .heroCopy>p{max-width:610px;line-height:1.72}
+.learningHero .heroFacts{margin-top:28px}
+.learningVisual{min-height:410px}
+.learningPaths{padding-top:68px;padding-bottom:72px}
+.learningPaths .sectionTop{gap:28px}
+.learningPathGrid{margin-top:28px;gap:12px}
+.learningPathGrid>a{min-height:245px;padding:22px 20px}
+.learningPathGrid>a>svg{margin-top:16px}
+.learningPathGrid h3{margin:13px 0 7px}
+.learningPathGrid p{line-height:1.65}
+.articleSpotlight{padding-top:58px;padding-bottom:58px}
+.articleSpotlight .fullHeading{margin-bottom:18px}
+.articleSpotlight .fullHeading p{max-width:680px}
+.articleSpotlightLink{padding:20px 24px}
+.trustSection{padding-top:64px;padding-bottom:64px;gap:35px}
+.trustList{gap:8px}
+.trustList article{padding:15px 0}
+.visionTeaser{padding-top:52px;padding-bottom:52px}
+.footer{padding-top:38px}
+.footerVision{margin-top:22px}
+@media(max-width:1000px){
+ .learningHero{padding-top:105px}
+ .learningVisual{min-height:340px}
+ .learningPathGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ .learningHero{padding:96px 20px 38px}
+ .learningHero .heroCopy>p{font-size:14px;line-height:1.7}
+ .learningHero .heroFacts{margin-top:22px}
+ .learningVisual{min-height:285px}
+ .learningArch{height:230px;width:min(68%,250px)}
+ .learningSun{top:27px;width:65px;height:65px}
+ .learningBook{bottom:43px;width:140px;height:90px}
+ .learningBook span{height:57px}
+ .learningDome{width:76px;height:42px}
+ .learningPillar{height:112px;width:16px}
+ .learningNote{padding:8px 10px}
+ .learningNote svg{width:18px;height:18px}
+ .learningNote b{font-size:9px}
+ .learningNote small{font-size:8px}
+ .learningVisualCaption{bottom:12px}
+ .learningPaths{padding:45px 18px}
+ .learningPaths .sectionTop{gap:10px}
+ .learningPathGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+ .learningPathGrid>a{padding:16px 14px;min-height:215px;border-radius:14px}
+ .learningPathGrid>a>svg{width:22px;height:22px;margin-top:12px}
+ .learningPathGrid h3{font-size:14px;line-height:1.3;margin:10px 0 6px}
+ .learningPathGrid p{font-size:11px;line-height:1.55}
+ .learningPathGrid b{font-size:10px}
+ .articleSpotlight{padding:42px 18px}
+ .articleSpotlightLink{padding:17px 15px}
+ .articleSpotlightLink strong{font-size:21px}
+ .articleSpotlightLink em{font-size:12px}
+ .trustSection{padding:45px 20px;gap:15px}
+ .trustList article{grid-template-columns:28px 1fr;gap:11px;padding:12px 0}
+ .trustList article>svg{width:22px;height:22px}
+ .trustList h3{font-size:14px}
+ .trustList p{font-size:11px;line-height:1.65}
+ .visionTeaser{padding:40px 20px;gap:18px}
+ .visionSeal{width:118px;height:118px}
+ .visionSeal b{font-size:30px}
+ .visionSeal small{font-size:7px}
+ .footer{padding:32px 20px 20px}
+}
+@media(max-width:420px){
+ .learningHero .heroCopy h1{font-size:clamp(38px,10vw,48px)}
+ .learningPathGrid{grid-template-columns:1fr}
+ .learningPathGrid>a{min-height:0}
+ .learningPathGrid p{font-size:12px}
+ .learningPathGrid>a>svg{margin-top:10px}
+ .learningVisual{min-height:260px}
+}

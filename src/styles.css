@@ -608,3 +608,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .sourceList p{padding:15px 0;border-bottom:1px solid #e3eaf2}.sourceList a{font-weight:800}.sourceList span{color:#5f6f82;font-size:12px;line-height:1.7}
 @media(max-width:900px){.articleHubGrid{grid-template-columns:1fr}}
 @media(max-width:620px){.articleHubCard{grid-template-columns:1fr}.articleHubCard img{height:auto;aspect-ratio:1200/560;min-height:0}.articleHubCardBody{padding:18px}.articleHubCardBody h3{font-size:22px}}
+
+.articleSectionsGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.articleSectionsGrid>article{min-width:0}
+@media(max-width:700px){.articleSectionsGrid{grid-template-columns:1fr}}

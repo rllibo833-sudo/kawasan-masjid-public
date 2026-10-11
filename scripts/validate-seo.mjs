@@ -7,8 +7,15 @@ const errors = [];
 const check = (ok, message) => { if (!ok) errors.push(message); };
 
 const sitemapPath = path.join(dist, 'sitemap.xml');
+const rootSitemapPath = path.join(process.cwd(), 'sitemap.xml');
+const publicSitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
 const robotsPath = path.join(dist, 'robots.txt');
 check(fs.existsSync(sitemapPath), 'dist/sitemap.xml is missing');
+check(fs.existsSync(rootSitemapPath), 'root sitemap.xml is missing');
+check(fs.existsSync(publicSitemapPath), 'public/sitemap.xml is missing');
+if (fs.existsSync(rootSitemapPath) && fs.existsSync(publicSitemapPath)) {
+  check(fs.readFileSync(rootSitemapPath, 'utf8') === fs.readFileSync(publicSitemapPath, 'utf8'), 'root sitemap.xml and public/sitemap.xml differ');
+}
 check(fs.existsSync(robotsPath), 'dist/robots.txt is missing');
 
 if (fs.existsSync(sitemapPath)) {

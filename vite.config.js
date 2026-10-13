@@ -7,8 +7,8 @@ export default defineConfig({
   plugins: [react()],
   publicDir: false,
   build: {
-    outDir: 'docs',
-    emptyOutDir: false,
+    outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'docs/index.html')

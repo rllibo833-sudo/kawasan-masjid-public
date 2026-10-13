@@ -19,11 +19,15 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Restore source HTML before each build
         run: cp site-index.template.html docs/index.html
-      - name: Build React and CSS for the /docs Pages source
+      - name: Build React and CSS
         run: npm run build
-      - name: Publish application images into docs
+      - name: Copy compiled site into the configured /docs publish directory
         run: |
-          mkdir -p docs/images
+          test -s dist/docs/index.html
+          rm -rf docs/assets
+          mkdir -p docs/assets docs/images
+          cp dist/docs/index.html docs/index.html
+          cp -R dist/assets/. docs/assets/
           cp -R docs/public/images/. docs/images/
       - name: Validate published output and SEO files
         run: |
@@ -36,6 +40,8 @@ jobs:
           grep -q 'Sitemap: https://rllibo833-sudo.github.io/kawasan-masjid-public/sitemap.xml' docs/robots.txt
           grep -Eq 'assets/.*\.css' docs/index.html
           grep -Eq 'assets/.*\.js' docs/index.html
+          test -s docs/assets/main-*.css
+          test -s docs/assets/main-*.js
           test -d docs/images
       - name: Commit generated Pages assets to docs
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'

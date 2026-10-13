@@ -1,4 +1,4 @@
-name: Validate GitHub Pages docs
+name: Build and validate GitHub Pages docs
 on:
   push:
     branches: [main]
@@ -6,19 +6,46 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate published docs files
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Restore source HTML before each build
+        run: cp site-index.template.html docs/index.html
+      - name: Build React and CSS for the /docs Pages source
+        run: npm run build
+      - name: Publish application images into docs
+        run: |
+          mkdir -p docs/images
+          cp -R docs/public/images/. docs/images/
+      - name: Validate published output and SEO files
         run: |
           test -s docs/index.html
           test -s docs/sitemap.xml
           test -s docs/robots.txt
           test -s docs/googleb706ba2b50bad689.html
+          grep -q 'name="google-site-verification"' docs/index.html
           grep -q '<urlset' docs/sitemap.xml
           grep -q 'Sitemap: https://rllibo833-sudo.github.io/kawasan-masjid-public/sitemap.xml' docs/robots.txt
-          test -d docs/public/images
-          echo "GitHub Pages docs source checks passed."
+          grep -Eq 'assets/.*\.css' docs/index.html
+          grep -Eq 'assets/.*\.js' docs/index.html
+          test -d docs/images
+      - name: Commit generated Pages assets to docs
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html docs/assets docs/images
+          if git diff --cached --quiet; then
+            echo "Published output is already up to date."
+          else
+            git commit -m "build(pages): publish compiled React and CSS assets"
+            git push
+          fi

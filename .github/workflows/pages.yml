@@ -1,4 +1,4 @@
-name: Deploy public website
+name: Validate GitHub Pages docs
 on:
   push:
     branches: [main]
@@ -7,31 +7,18 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: false
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm install
-      - run: npm run check
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-  deploy:
-    if: github.event_name != 'pull_request'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Validate published docs files
+        run: |
+          test -s docs/index.html
+          test -s docs/sitemap.xml
+          test -s docs/robots.txt
+          test -s docs/googleb706ba2b50bad689.html
+          grep -q '<urlset' docs/sitemap.xml
+          grep -q 'Sitemap: https://rllibo833-sudo.github.io/kawasan-masjid-public/sitemap.xml' docs/robots.txt
+          test -d docs/public/images
+          echo "GitHub Pages docs source checks passed."

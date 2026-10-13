@@ -17,16 +17,18 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Restore source HTML before each build
+      - name: Restore homepage source HTML
         run: cp site-index.template.html docs/index.html
-      - name: Build React and CSS
+      - name: Make application source available to Vite from the docs root
+        run: cp -R src docs/src
+      - name: Build every HTML page, React, and CSS
         run: npm run build
       - name: Copy compiled site into the configured /docs publish directory
         run: |
-          test -s dist/docs/index.html
-          rm -rf docs/assets
+          test -s dist/index.html
+          cp dist/*.html docs/
+          rm -rf docs/assets docs/src
           mkdir -p docs/assets docs/images
-          cp dist/docs/index.html docs/index.html
           cp -R dist/assets/. docs/assets/
           cp -R docs/public/images/. docs/images/
       - name: Validate published output and SEO files
@@ -40,15 +42,17 @@ jobs:
           grep -q 'Sitemap: https://rllibo833-sudo.github.io/kawasan-masjid-public/sitemap.xml' docs/robots.txt
           grep -Eq 'assets/.*\.css' docs/index.html
           grep -Eq 'assets/.*\.js' docs/index.html
-          test -s docs/assets/main-*.css
-          test -s docs/assets/main-*.js
+          test -n "$(find docs/assets -maxdepth 1 -type f -name '*.css' -print -quit)"
+          test -n "$(find docs/assets -maxdepth 1 -type f -name '*.js' -print -quit)"
+          test -s docs/about.html
+          grep -Eq 'assets/.*\.js' docs/about.html
           test -d docs/images
       - name: Commit generated Pages assets to docs
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html docs/assets docs/images
+          git add docs/*.html docs/assets docs/images
           if git diff --cached --quiet; then
             echo "Published output is already up to date."
           else

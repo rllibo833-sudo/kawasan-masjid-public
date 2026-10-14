@@ -9,7 +9,7 @@ const requireText = (text, description) => {
 requireText("PUBLIC-VERIFIED STATUS", "a dedicated verified-status section");
 requireText("20 sumber public-safe", "the curated public-safe index count");
 requireText("CORE Quality Gate", "grounding CI status is described with evidence");
-requireText("Ollama pada perangkat Founder belum diuji", "local inference is explicitly unverified");
+requireText("Inferensi pada perangkat Founder belum diuji", "local inference is explicitly unverified");
 requireText("tidak ada klaim bahwa endpoint AI publik atau runner PusingCuk produksi telah aktif", "production AI deployment is not claimed");
 requireText("bukan bukti bahwa lahan, izin, pendanaan, atau pembangunan fisik telah tersedia", "masterplan is presented as a concept, not physical proof");
 requireText("https://github.com/rllibo833-sudo/kawasan-masjid-core/actions/runs/38534219549", "the CORE verification run is linked");

@@ -639,3 +639,17 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   font:600 14px/1.6 system-ui,sans-serif;
   text-align:center;
 }
+
+
+/* CORE public intake form */
+.publicIntakeForm{display:grid;gap:14px;padding:22px;border:1px solid #dbe5de;border-radius:18px;background:#fff;color:#183d2d}
+.publicIntakeForm>strong{font-size:20px}
+.publicIntakeForm p,.publicIntakeForm small{margin:0;color:#5f6f82;font-size:13px;line-height:1.65}
+.publicIntakeForm label{display:grid;gap:7px;color:#244735;font-size:13px;font-weight:700}
+.publicIntakeForm input,.publicIntakeForm select,.publicIntakeForm textarea{box-sizing:border-box;width:100%;min-width:0;padding:11px 12px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#142d20;font:inherit;font-weight:400}
+.publicIntakeForm input:focus-visible,.publicIntakeForm select:focus-visible,.publicIntakeForm textarea:focus-visible{outline:3px solid #f4c95d;outline-offset:2px}
+.publicIntakeGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.publicIntakeForm button:disabled{opacity:.65;cursor:wait}
+.publicIntakeStatus{padding:12px;border-radius:10px;background:#f1f5f9;color:#243b53!important;overflow-wrap:anywhere}
+.publicIntakeHoneypot{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+@media(max-width:620px){.publicIntakeForm{padding:16px}.publicIntakeGrid{grid-template-columns:1fr}}

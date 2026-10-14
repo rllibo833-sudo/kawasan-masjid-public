@@ -8,6 +8,9 @@ export default function PublicIntakeForm() {
   const [form, setForm] = useState(initial);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
+  const [trackingId, setTrackingId] = useState("");
+  const [tracking, setTracking] = useState(null);
+  const [checking, setChecking] = useState(false);
   const key = useRef(null);
   const change = (event) => setForm((old) => ({ ...old, [event.target.name]: event.target.value }));
   async function submit(event) {
@@ -26,6 +29,8 @@ export default function PublicIntakeForm() {
       if ((response.status === 202 && result.status === "accepted") || (response.status === 200 && result.status === "duplicate")) {
         key.current = null;
         setForm(initial);
+        setTrackingId(result.intake_id || "");
+        setTracking(null);
         setMessage(`Tersimpan di CORE. ID transaksi: ${result.intake_id || "tercatat"}. Status: ${result.transaction_status || "menunggu eksekusi aturan terisolasi"}.`);
       } else if (response.status === 429) {
         setMessage("Batas pengiriman tercapai. Coba lagi setelah satu jam.");
@@ -38,6 +43,28 @@ export default function PublicIntakeForm() {
       setBusy(false);
     }
   }
+  async function lookupStatus() {
+    if (!trackingId || checking) return;
+    setChecking(true);
+    setTracking(null);
+    try {
+      const response = await fetch(`${ENDPOINT}?id=${encodeURIComponent(trackingId)}`, {
+        method: "GET",
+        headers: { apikey: API_KEY, "Cache-Control": "no-store" },
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.status !== "found") {
+        setTracking({ error: result.error || "STATUS_LOOKUP_FAILED" });
+      } else {
+        setTracking(result);
+      }
+    } catch {
+      setTracking({ error: "STATUS_LOOKUP_FAILED" });
+    } finally {
+      setChecking(false);
+    }
+  }
+
   return <form className="publicIntakeForm" onSubmit={submit}>
     <strong>Ajukan kebutuhan konkret</strong>
     <p>Data disimpan di CORE. Pemeriksaan anggaran membandingkan saldo tersedia dengan kebutuhan dana; hasil bukan persetujuan pendanaan.</p>
@@ -55,6 +82,10 @@ export default function PublicIntakeForm() {
     <div className="publicIntakeHoneypot" aria-hidden="true"><label>Website<input name="website" tabIndex="-1" autoComplete="off" value={form.website} onChange={change}/></label></div>
     <button className="button buttonGold" type="submit" disabled={busy}>{busy ? "Mengirim…" : "Kirim ke CORE"}</button>
     {message && <p className="publicIntakeStatus" role="status" aria-live="polite">{message}</p>}
-    <small>Kontak disimpan di area privat CORE dan tidak tersedia melalui API publik. Status sukses hanya muncul setelah konfirmasi penyimpanan.</small>
+    {trackingId && <div className="publicIntakeTracking">
+      <button className="button buttonGold" type="button" onClick={lookupStatus} disabled={checking}>{checking ? "Memeriksa…" : "Lihat status & bukti CORE"}</button>
+      {tracking && <pre role="status" aria-live="polite">{JSON.stringify(tracking, null, 2)}</pre>}
+    </div>}
+    <small>Kontak disimpan di area privat CORE dan tidak tersedia melalui API publik. Status sukses hanya muncul setelah konfirmasi penyimpanan. Pemeriksaan status dibatasi hingga lima permintaan per IP per jam bersama pengiriman formulir.</small>
   </form>;
 }

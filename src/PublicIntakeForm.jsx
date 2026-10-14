@@ -26,7 +26,7 @@ export default function PublicIntakeForm() {
         body: JSON.stringify({ ...form, name: form.name.trim(), contact: form.contact.trim(), need: form.need.trim(), timeline: form.timeline.trim(), nominal: Number(form.nominal), batas: Number(form.batas) }),
       });
       const result = await response.json().catch(() => ({}));
-      if ((response.status === 202 && result.status === "accepted") || (response.status === 200 && result.status === "duplicate")) {
+      if ((response.status === 202 && result.status === "accepted" && typeof result.intake_id === "string") || (response.status === 200 && result.status === "duplicate" && typeof result.intake_id === "string")) {
         key.current = null;
         setForm(initial);
         setTrackingId(result.intake_id || "");

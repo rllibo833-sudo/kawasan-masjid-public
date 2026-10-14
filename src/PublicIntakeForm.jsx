@@ -50,7 +50,7 @@ export default function PublicIntakeForm() {
     try {
       const response = await fetch(`${ENDPOINT}?id=${encodeURIComponent(trackingId)}`, {
         method: "GET",
-        headers: { apikey: API_KEY, "Cache-Control": "no-store" },
+        headers: { apikey: API_KEY },
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.status !== "found") {

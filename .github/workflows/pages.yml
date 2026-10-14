@@ -35,7 +35,9 @@ jobs:
       - name: Restore homepage source HTML
         run: cp site-index.template.html docs/index.html
       - name: Make application source available to Vite from the docs root
-        run: cp -R src docs/src
+        run: rm -rf docs/src && cp -R src docs/src
+      - name: Restore HTML source entrypoints and strip stale generated bundles
+        run: node scripts/prepare-html-inputs.mjs
       - name: Build and validate the exact SEO contract
         run: npm run check
       - name: Verify Google Search Console file remains present
@@ -64,6 +66,8 @@ jobs:
         run: cp site-index.template.html docs/index.html
       - name: Make application source available to Vite from the docs root
         run: cp -R src docs/src
+      - name: Restore HTML source entrypoints and strip stale generated bundles
+        run: node scripts/prepare-html-inputs.mjs
       - name: Build and validate before publication
         run: npm run check
       - name: Copy compiled site into configured docs publish directory

@@ -612,3 +612,30 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .articleSectionsGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .articleSectionsGrid>article{min-width:0}
 @media(max-width:700px){.articleSectionsGrid{grid-template-columns:1fr}}
+
+/* Accessibility and deferred visualization safeguards (2026-10-14). */
+.buttonGold,.learningHero .buttonGold,.learningFeatureCopy .buttonGold,.runtimeFallback .buttonGold{
+  background:#176b32;
+  border-color:#176b32;
+  color:#fff;
+}
+.buttonGold:hover,.learningHero .buttonGold:hover,.learningFeatureCopy .buttonGold:hover,.runtimeFallback .buttonGold:hover{
+  background:#125526;
+  border-color:#125526;
+}
+.button:focus-visible,.nav a:focus-visible,.mobileMenu:focus-visible,.researchFilters button:focus-visible{
+  outline:3px solid #f4c95d;
+  outline-offset:3px;
+}
+.mapLoading{
+  min-height:180px;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  border:1px solid #cbd5e1;
+  border-radius:16px;
+  background:#f8fafc;
+  color:#334155;
+  font:600 14px/1.6 system-ui,sans-serif;
+  text-align:center;
+}

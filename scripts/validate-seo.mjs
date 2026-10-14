@@ -18,13 +18,8 @@ const read = (filePath, label) => {
 // intentional SEO change with an explicit review, not an accidental build side effect.
 const expectedUrls = [
   base,
-  base + 'vision.html',
-  base + 'ecosystem.html',
-  base + 'system.html',
   base + 'research.html',
   base + 'belajar-islam-digital.html',
-  base + 'collaborate.html',
-  base + 'support.html',
   base + 'about.html',
   base + 'cara-memeriksa-hadis-viral.html',
   base + 'cara-memeriksa-ayat-quran-viral.html',
@@ -72,7 +67,7 @@ if (sourceSitemap) {
   check(sourceSitemap.includes('</urlset>'), 'Sitemap closing tag is missing');
 
   const urls = [...sourceSitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1].trim());
-  check(urls.length === 23, `Expected exactly 23 stable public URLs; found ${urls.length}`);
+  check(urls.length === 18, `Expected exactly 18 stable public URLs; found ${urls.length}`);
   check(new Set(urls).size === urls.length, 'Sitemap contains duplicate URLs');
   check(
     JSON.stringify(urls) === JSON.stringify(expectedUrls),

@@ -1,18 +1,33 @@
 name: Build and validate GitHub Pages docs
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
+
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: public-pages-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
-  build:
+  validate:
+    name: Read-only build and SEO validation
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Install dependencies
@@ -21,18 +36,45 @@ jobs:
         run: cp site-index.template.html docs/index.html
       - name: Make application source available to Vite from the docs root
         run: cp -R src docs/src
-      - name: Build every HTML page, React, and CSS
-        run: npm run build
-      - name: Copy compiled site into the configured /docs publish directory
+      - name: Build and validate the exact SEO contract
+        run: npm run check
+      - name: Verify Google Search Console file remains present
         run: |
+          expected='google-site-verification: googleb706ba2b50bad689.html'
+          test "$(cat docs/googleb706ba2b50bad689.html)" = "$expected"
+
+  publish:
+    name: Publish compiled pages to the docs branch directory
+    if: ${{ github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch' }}
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main for publication
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Restore homepage source HTML
+        run: cp site-index.template.html docs/index.html
+      - name: Make application source available to Vite from the docs root
+        run: cp -R src docs/src
+      - name: Build and validate before publication
+        run: npm run check
+      - name: Copy compiled site into configured docs publish directory
+        run: |
+          set -euo pipefail
           test -s dist/index.html
           cp dist/*.html docs/
           rm -rf docs/assets docs/src
           mkdir -p docs/assets docs/images
           cp -R dist/assets/. docs/assets/
           cp -R docs/public/images/. docs/images/
-      - name: Validate published output and SEO files
-        run: |
           test -s docs/index.html
           test -s docs/sitemap.xml
           test -s docs/robots.txt
@@ -40,15 +82,8 @@ jobs:
           grep -q 'name="google-site-verification"' docs/index.html
           grep -q '<urlset' docs/sitemap.xml
           grep -q 'Sitemap: https://rllibo833-sudo.github.io/kawasan-masjid-public/sitemap.xml' docs/robots.txt
-          grep -Eq 'assets/.*\.css' docs/index.html
-          grep -Eq 'assets/.*\.js' docs/index.html
-          test -n "$(find docs/assets -maxdepth 1 -type f -name '*.css' -print -quit)"
-          test -n "$(find docs/assets -maxdepth 1 -type f -name '*.js' -print -quit)"
-          test -s docs/about.html
-          grep -Eq 'assets/.*\.js' docs/about.html
           test -d docs/images
-      - name: Commit generated Pages assets to docs
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      - name: Commit generated Pages assets only after validation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -56,6 +91,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Published output is already up to date."
           else
-            git commit -m "build(pages): publish compiled React and CSS assets"
+            git commit -m "build(pages): publish validated compiled assets"
             git push
           fi

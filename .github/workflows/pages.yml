@@ -39,7 +39,9 @@ jobs:
       - name: Build and validate the exact SEO contract
         run: npm run check
       - name: Verify Google Search Console file remains present
-        run: test "$(cat docs/googleb706ba2b50bad689.html)" = "google-site-verification: googleb706ba2b50bad689.html"
+        run: |
+          expected='google-site-verification: googleb706ba2b50bad689.html'
+          test "$(cat docs/googleb706ba2b50bad689.html)" = "$expected"
 
   publish:
     name: Publish compiled pages to the docs branch directory

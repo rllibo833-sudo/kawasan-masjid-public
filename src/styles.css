@@ -653,3 +653,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .publicIntakeStatus{padding:12px;border-radius:10px;background:#f1f5f9;color:#243b53!important;overflow-wrap:anywhere}
 .publicIntakeHoneypot{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
 @media(max-width:620px){.publicIntakeForm{padding:16px}.publicIntakeGrid{grid-template-columns:1fr}}
+
+
+.publicIntakeTracking{display:grid;gap:10px;min-width:0}
+.publicIntakeTracking pre{max-width:100%;max-height:360px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;border:1px solid #dbe5de;border-radius:10px;background:#f8fafc;color:#26384b;font-size:12px;line-height:1.55}

@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "npm run build && node scripts/validate-seo.mjs"
+    "check": "npm run build && node scripts/validate-seo.mjs && node scripts/validate-public-system-status.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "6.1.1",

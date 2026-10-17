@@ -25,6 +25,7 @@ const expectedUrls = [
   base + 'cara-memeriksa-ayat-quran-viral.html',
   base + 'privacy-policy.html',
   base + 'artikel.html',
+  base + 'pusingcuk.html',
   base + 'cek-hoaks-agama-sebelum-membagikan.html',
   base + 'cara-mencari-sumber-hadis.html',
   base + 'memahami-konteks-ayat-al-quran.html',
@@ -67,11 +68,11 @@ if (sourceSitemap) {
   check(sourceSitemap.includes('</urlset>'), 'Sitemap closing tag is missing');
 
   const urls = [...sourceSitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1].trim());
-  check(urls.length === 18, `Expected exactly 18 stable public URLs; found ${urls.length}`);
+  check(urls.length === 19, `Expected exactly 19 stable public URLs; found ${urls.length}`);
   check(new Set(urls).size === urls.length, 'Sitemap contains duplicate URLs');
   check(
     JSON.stringify(urls) === JSON.stringify(expectedUrls),
-    'The ordered URL list differs from the approved 23-URL contract'
+    'The ordered URL list differs from the approved public URL contract'
   );
 
   for (const url of urls) {
@@ -147,4 +148,4 @@ if (errors.length) {
   for (const error of errors) console.error(' - ' + error);
   process.exit(1);
 }
-console.log('SEO validation passed: exact 23-URL contract, sitemap mirrors, robots.txt, canonical URLs, metadata, Google verification, and source article images.');
+console.log('SEO validation passed: exact 19-URL contract, sitemap mirrors, robots.txt, canonical URLs, metadata, Google verification, and source article images.');

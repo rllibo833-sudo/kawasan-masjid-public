@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kawasan Masjid 1000 Hektare - Platform konsep ekosistem digital terpadu untuk komunitas Islam modern. Membuka peluang kemitraan, investasi, dan kolaborasi strategis.">
+    <meta name="keywords" content="kawasan masjid, ekosistem digital islam, 1000 hektare, investasi halal, kemitraan islam, komunitas terpadu">
+    <meta name="author" content="Kawasan Masjid">
+    <meta property="og:title" content="Kawasan Masjid 1000 Hektare - Ekosistem Digital Islam Modern">
+    <meta property="og:description" content="Platform konsep pengembangan komunitas Islam terpadu dengan teknologi digital. Terbuka untuk partnership, investasi, dan kolaborasi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rllibo833-sudo.github.io/kawasan-masjid-public/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <title>Kawasan Masjid 1000 Hektare - Ekosistem Digital Islam</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a472a;
+            --secondary: #2d6a5c;
+            --accent: #d4a574;
+            --light: #f5f5f5;
+            --text: #333;
+            --text-light: #666;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo small {
+            font-size: 12px;
+            display: block;
+            color: var(--text-light);
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 56px);
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            opacity: 0.95;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero .note {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0 40px;
+            font-size: 14px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* STATS */
+        .stats {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 80px 0;
+        }
+        
+        section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        section > .container > p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        
+        /* ABOUT */
+        .about {
+            background: #f9f9f9;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .about-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .about-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* MASTERPLAN */
+        .masterplan {
+            background: white;
+        }
+        
+        .masterplan-container {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .masterplan-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .zone-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .zone-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .zone-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .zone-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .zone-type {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        /* PARTNERSHIP */
+        .partnership {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+        }
+        
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .partner-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .partner-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .partner-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        /* ARTICLES */
+        .articles {
+            background: white;
+        }
+        
+        .lang-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--secondary);
+            background: white;
+            color: var(--secondary);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .lang-btn:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .article-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .article-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+        
+        .article-card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 40px;
+        }
+        
+        .article-card-body {
+            padding: 20px;
+        }
+        
+        .article-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .article-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* CONTACT */
+        .contact {
+            background: #f9f9f9;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(45, 106, 92, 0.1);
+        }
+        
+        .form-submit {
+            width: 100%;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        footer h4 {
+            margin-bottom: 15px;
+        }
+        
+        footer p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            section h2 {
+                font-size: 28px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                gap: 20px;
+            }
+            
+            .about-grid,
+            .partnership-grid,
+            .articles-grid,
+            .zone-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .lang-selector {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    🕌 KAWASAN MASJID
+                    <small>1000 Hektare</small>
+                </a>
+                <nav>
+                    <a href="#about">Tentang</a>
+                    <a href="#masterplan">Masterplan</a>
+                    <a href="#partnership">Partnership</a>
+                    <a href="#articles">Artikel</a>
+                    <a href="#contact">Kontak</a>
+                </nav>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Kawasan Masjid 1000 Hektare</h1>
+            <p class="subtitle">Ekosistem Digital Terpadu untuk Kehidupan Islam Modern</p>
+            <div class="note">
+                ℹ️ <strong>Transparansi:</strong> Ini adalah konsep dan visi yang sedang dikembangkan. Bukan proyek yang sudah jadi. Kami membuka peluang diskusi dan partnership.
+            </div>
+            <div class="cta-buttons">
+                <a href="#masterplan" class="btn btn-primary">Lihat Masterplan</a>
+                <a href="#contact" class="btn btn-secondary">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1000</h3>
+                    <p>Hektare Lahan</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10,000+</h3>
+                    <p>Unit Residensial</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Fasilitas Umum</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3</h3>
+                    <p>Phase Pengembangan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Apa Itu Kawasan Masjid?</h2>
+            <p>Kawasan Masjid adalah konsep pengembangan komunitas terpadu yang menggabungkan nilai-nilai Islam dengan teknologi digital dan pembangunan berkelanjutan.</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🌍 Visi</h3>
+                    <p>Menciptakan ekosistem digital yang terintegrasi untuk mendukung kehidupan Muslim modern dengan teknologi terkini dan nilai-nilai Islam yang kuat.</p>
+                </div>
+                <div class="about-card">
+                    <h3>💡 Misi</h3>
+                    <p>Mengembangkan komunitas perumahan komersial yang sustainable dengan fokus pada adaptasi AI, ekosistem digital, dan pemberdayaan ekonomi Islam.</p>
+                </div>
+                <div class="about-card">
+                    <h3>🎯 Nilai Inti</h3>
+                    <p>Islam, Teknologi, Keberlanjutan, Komunitas. Kami berkomitmen untuk pembangunan yang bertanggung jawab dan inklusif.</p>
+                </div>
+                <div class="about-card">
+                    <h3>📋 Status Saat Ini</h3>
+                    <p>Tahap konsep dan idealisasi. Kami mencari partner strategis, investor, dan pengembang untuk merealisasikan visi ini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTERPLAN -->
+    <section class="masterplan" id="masterplan">
+        <div class="container">
+            <h2>Masterplan Interaktif</h2>
+            <p>Visualisasi layout dan zonasi Kawasan Masjid 1000 Hektare. Hover atau klik setiap zona untuk detail lebih lanjut.</p>
+            
+            <div class="masterplan-container">
+                <div style="background: white; padding: 40px; border-radius: 8px; text-align: center;">
+                    <p style="color: #999; margin-bottom: 20px;">📍 Masterplan Kawasan Masjid akan ditampilkan di sini</p>
+                    <p style="color: #ccc; font-size: 14px;">Gambar high-res dengan zona-zona interaktif sedang dioptimalkan</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 60px; color: var(--primary);">Zona-Zona Utama</h3>
+            <div class="zone-info">
+                <div class="zone-card">
+                    <h4>🕌 Masjid Utama & Edukasi</h4>
+                    <span class="zone-type">Religious & Education</span>
+                    <p>Pusat spiritual dan pembelajaran Islam dengan fasilitas lengkap untuk semua kalangan.</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Phase: 1 | Status: Planning</p>
+                </div>
+                <div class="zone-card">
+                    <h4>🏘️ Residensial Premium</h4>
+                    <span class="zone-type">Residential</span>
+                    <p>Unit rumah tinggal berkualitas tinggi dengan fasilitas lingkungan yang lengkap.</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Phase: 1-2 | Status: Planning</p>
+                </div>
+                <div class="zone-card">
+                    <h4>🏬 Pusat Komersial</h4>
+                    <span class="zone-type">Commercial</span>
+                    <p>Area bisnis dan perdagangan dengan standar internasional.</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Phase: 2 | Status: Planning</p>
+                </div>
+                <div class="zone-card">
+                    <h4>🌳 Ruang Hijau & Rekreasi</h4>
+                    <span class="zone-type">Green Space</span>
+                    <p>Taman, olahraga, dan area rekreasi untuk aktivitas komunitas.</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Phase: 1-3 | Status: Planning</p>
+                </div>
+                <div class="zone-card">
+                    <h4>🏥 Fasilitas Kesehatan</h4>
+                    <span class="zone-type">Healthcare</span>
+                    <p>Klinik, rumah sakit, dan layanan kesehatan sesuai ajaran Islam.</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Phase: 2 | Status: Planning</p>
+                </div>
+                <div class="zone-card">
+                    <h4>🔬 Teknologi & Inovasi</h4>
+                    <span class="zone-type">Tech Hub</span>
+                    <p>Pusat teknologi digital dan inkubator startup berbasis nilai Islam.</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #999;">Phase: 2 | Status: Planning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIP -->
+    <section class="partnership" id="partnership">
+        <div class="container">
+            <h2>Peluang Partnership</h2>
+            <p>Kami membuka kesempatan kolaborasi dalam berbagai aspek pengembangan Kawasan Masjid.</p>
+            
+            <div class="partnership-grid">
+                <div class="partner-card">
+                    <div class="icon">💻</div>
+                    <h3>Technology Partners</h3>
+                    <p>Kerjasama dalam pengembangan ekosistem digital, fintech islam, dan platform teknologi.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="icon">🏗️</div>
+                    <h3>Development Partners</h3>
+                    <p>Kolaborasi dengan developer properti, kontraktor, dan firma arsitektur untuk realisasi masterplan.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="icon">🤝</div>
+                    <h3>Strategic Partners</h3>
+                    <p>Kerjasama dengan organisasi Islam, institusi pendidikan, dan lembaga sosial.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="icon">💰</div>
+                    <h3>Investment Partners</h3>
+                    <p>Peluang investasi, pendanaan, dan akselerasi bisnis untuk merealisasikan fase pertama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section class="articles" id="articles">
+        <div class="container">
+            <h2>Artikel & Panduan</h2>
+            <p>Konten edukatif tentang Islam, teknologi digital, dan pengembangan komunitas berkelanjutan.</p>
+            
+            <div class="lang-selector">
+                <button class="lang-btn active" onclick="switchLang('id')">🇮🇩 Bahasa Indonesia</button>
+                <button class="lang-btn" onclick="switchLang('en')">🇬🇧 English</button>
+                <button class="lang-btn" onclick="switchLang('ar')">🇸🇦 العربية</button>
+            </div>
+            
+            <div class="articles-grid" id="articles-container">
+                <!-- Articles will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <p>Tertarik untuk berkolaborasi atau mendiskusikan peluang partnership? Hubungi kami langsung.</p>
+            
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label>Nama Lengkap / Organisasi</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Jenis Inquiri</label>
+                    <select name="inquiry_type" required>
+                        <option value="">-- Pilih --</option>
+                        <option value="technology">Technology Partnership</option>
+                        <option value="development">Development Partnership</option>
+                        <option value="strategic">Strategic Partnership</option>
+                        <option value="investment">Investment Inquiry</option>
+                        <option value="other">Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Pesan / Proposal</label>
+                    <textarea name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form-submit">Kirim Inquiri</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <h3 style="color: var(--primary);">Informasi Kontak</h3>
+                <p style="margin-top: 15px;">
+                    <strong>Email:</strong> <a href="mailto:pusingcukdevprog@gmail.com">pusingcukdevprog@gmail.com</a>
+                </p>
+                <p style="margin-top: 10px; color: var(--text-light); font-size: 14px;">
+                    Kami akan merespons inquiri Anda dalam 24-48 jam.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>Kawasan Masjid</h4>
+                    <p>Konsep ekosistem digital terpadu untuk komunitas Islam modern. Membuka peluang partnership dan investasi.</p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <p><a href="#about">Tentang Kami</a></p>
+                    <p><a href="#masterplan">Masterplan</a></p>
+                    <p><a href="#partnership">Partnership</a></p>
+                    <p><a href="#contact">Kontak</a></p>
+                </div>
+                <div>
+                    <h4>Transparansi</h4>
+                    <p>Status: Konsep & Idealisasi</p>
+                    <p>Phase 1: Planning</p>
+                    <p>Dibuka untuk: Discussion & Partnership</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2025 Kawasan Masjid. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Articles data
+        const articles = {
+            id: [
+                {
+                    title: "Islam dan Transformasi Digital",
+                    description: "Bagaimana teknologi digital dapat mendukung praktik Islam dalam kehidupan modern.",
+                    emoji: "📱"
+                },
+                {
+                    title: "Ekosistem Digital untuk Komunitas Muslim",
+                    description: "Strategi membangun ekosistem teknologi yang inklusif dan sesuai nilai-nilai Islam.",
+                    emoji: "🌐"
+                },
+                {
+                    title: "Pembangunan Berkelanjutan dalam Perspektif Islam",
+                    description: "Prinsip-prinsip Islam dalam pembangunan yang sustainable dan bertanggung jawab.",
+                    emoji: "🌱"
+                }
+            ],
+            en: [
+                {
+                    title: "Islam and Digital Transformation",
+                    description: "How digital technology can support Islamic practices in modern life.",
+                    emoji: "📱"
+                },
+                {
+                    title: "Digital Ecosystem for Muslim Communities",
+                    description: "Strategy for building inclusive technology ecosystem aligned with Islamic values.",
+                    emoji: "🌐"
+                },
+                {
+                    title: "Sustainable Development from Islamic Perspective",
+                    description: "Islamic principles in responsible and sustainable development.",
+                    emoji: "🌱"
+                }
+            ],
+            ar: [
+                {
+                    title: "الإسلام والتحول الرقمي",
+                    description: "كيف يمكن للتكنولوجيا الرقمية أن تدعم الممارسات الإسلامية في الحياة الحديثة.",
+                    emoji: "📱"
+                },
+                {
+                    title: "النظام الرقمي للمجتمعات المسلمة",
+                    description: "استراتيجية بناء نظام تكنولوجي شامل يتوافق مع القيم الإسلامية.",
+                    emoji: "🌐"
+                },
+                {
+                    title: "التنمية المستدامة من المنظور الإسلامي",
+                    description: "المبادئ الإسلامية في التنمية المسؤولة والمستدامة.",
+                    emoji: "🌱"
+                }
+            ]
+        };
+
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Load articles
+            const container = document.getElementById('articles-container');
+            container.innerHTML = '';
+            
+            articles[lang].forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'article-card';
+                card.innerHTML = `
+                    <div class="article-card-header">${article.emoji}</div>
+                    <div class="article-card-body">
+                        <h3>${article.title}</h3>
+                        <p>${article.description}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Load initial articles
+        switchLang('id');
+
+        // Form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Inquiri Anda telah dikirim ke pusingcukdevprog@gmail.com\n\nKami akan merespons dalam 24-48 jam.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

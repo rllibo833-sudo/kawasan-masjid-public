@@ -1,0 +1,361 @@
+{
+  "project": {
+    "name": "Kawasan Masjid 1000 Hektare",
+    "status": "Concept & ideation",
+    "areaHectares": 1000,
+    "note": "Konsep visual untuk diskusi; bukan proyek yang telah dibangun atau disetujui."
+  },
+  "zones": [
+    {
+      "id": "zone_1",
+      "number": 1,
+      "name": "Masjid Utama",
+      "type": "Religious & Education",
+      "description": "Pusat ibadah, kajian dan ruang komunitas.",
+      "facilities": [
+        "Ruang salat utama",
+        "Ruang kajian",
+        "Perpustakaan masjid"
+      ],
+      "phase": 1,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_2",
+      "number": 2,
+      "name": "Plaza Utama",
+      "type": "Public Space",
+      "description": "Ruang temu terbuka dan kegiatan warga.",
+      "facilities": [
+        "Plaza publik",
+        "Area acara",
+        "Ruang duduk"
+      ],
+      "phase": 1,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_3",
+      "number": 3,
+      "name": "Taman & Ruang Hijau",
+      "type": "Ecology",
+      "description": "Taman dan ruang rekreasi hijau.",
+      "facilities": [
+        "Taman tematik",
+        "Jalur jalan kaki",
+        "Area teduh"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_4",
+      "number": 4,
+      "name": "Perpustakaan",
+      "type": "Education",
+      "description": "Ruang literasi, riset dan belajar.",
+      "facilities": [
+        "Koleksi buku",
+        "Ruang baca",
+        "Ruang belajar"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_5",
+      "number": 5,
+      "name": "Coffee Shop & Pusat Literasi",
+      "type": "Community",
+      "description": "Ruang pertemuan informal dan literasi.",
+      "facilities": [
+        "Kafe konsep",
+        "Ruang diskusi",
+        "Area baca"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_6",
+      "number": 6,
+      "name": "Pusat Pendidikan",
+      "type": "Education",
+      "description": "Konsep pendidikan dan pembelajaran.",
+      "facilities": [
+        "Ruang kelas",
+        "Laboratorium",
+        "Ruang kegiatan"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_7",
+      "number": 7,
+      "name": "Sport Center & Kesehatan",
+      "type": "Health & Sport",
+      "description": "Aktivitas fisik dan program kesehatan.",
+      "facilities": [
+        "Lapangan olahraga",
+        "Ruang kebugaran",
+        "Layanan komunitas"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_8",
+      "number": 8,
+      "name": "Klinik & Rumah Sakit",
+      "type": "Health",
+      "description": "Zona layanan kesehatan yang memerlukan studi dan izin.",
+      "facilities": [
+        "Klinik konsep",
+        "Layanan preventif",
+        "Area layanan"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_9",
+      "number": 9,
+      "name": "Asrama Santri",
+      "type": "Residential & Education",
+      "description": "Hunian pelajar dengan area belajar.",
+      "facilities": [
+        "Hunian santri",
+        "Ruang belajar",
+        "Ruang makan"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_10",
+      "number": 10,
+      "name": "Pusat Kuliner & UMKM",
+      "type": "Economy",
+      "description": "Ruang bagi usaha kecil dan ekonomi komunitas.",
+      "facilities": [
+        "Kios UMKM",
+        "Area kuliner",
+        "Produk lokal"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_11",
+      "number": 11,
+      "name": "Masjid Kecil",
+      "type": "Religious",
+      "description": "Ruang ibadah harian yang tersebar.",
+      "facilities": [
+        "Mushalla",
+        "Tempat wudu",
+        "Ruang singgah"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_12",
+      "number": 12,
+      "name": "Perumahan Masyarakat",
+      "type": "Residential",
+      "description": "Konsep hunian bagi masyarakat dan keluarga.",
+      "facilities": [
+        "Hunian keluarga",
+        "Ruang komunal",
+        "Taman lingkungan"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_13",
+      "number": 13,
+      "name": "Rumah Pengurus Inti",
+      "type": "Residential",
+      "description": "Hunian terencana untuk pengelola.",
+      "facilities": [
+        "Hunian",
+        "Ruang kerja",
+        "Area bersama"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_14",
+      "number": 14,
+      "name": "Rusun Staf & Pengelola",
+      "type": "Residential",
+      "description": "Hunian staf dengan fasilitas dasar.",
+      "facilities": [
+        "Unit hunian",
+        "Ruang komunal",
+        "Area servis"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_15",
+      "number": 15,
+      "name": "Hub Sepeda Listrik",
+      "type": "Mobility",
+      "description": "Titik mobilitas rendah emisi.",
+      "facilities": [
+        "Parkir sepeda",
+        "Pengisian listrik",
+        "Papan rute"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_16",
+      "number": 16,
+      "name": "Taman Rekreasi & Danau",
+      "type": "Ecology",
+      "description": "Rekreasi air dan lanskap konservasi.",
+      "facilities": [
+        "Tepi danau",
+        "Jalur rekreasi",
+        "Area observasi"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_17",
+      "number": 17,
+      "name": "Pengelolaan Air & Danau Buatan",
+      "type": "Utilities & Ecology",
+      "description": "Pengelolaan air hujan dan irigasi.",
+      "facilities": [
+        "Retensi air",
+        "Irigasi",
+        "Pemantauan kualitas"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_18",
+      "number": 18,
+      "name": "Area Pertanian",
+      "type": "Agriculture",
+      "description": "Produksi pangan dan pembelajaran pertanian.",
+      "facilities": [
+        "Kebun sayur",
+        "Hidroponik",
+        "Rumah kaca"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_19",
+      "number": 19,
+      "name": "Peternakan",
+      "type": "Agriculture",
+      "description": "Peternakan dengan prinsip kesejahteraan hewan.",
+      "facilities": [
+        "Area ternak",
+        "Pengolahan limbah",
+        "Pakan"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_20",
+      "number": 20,
+      "name": "Olahraga Panahan & Berkuda",
+      "type": "Sport",
+      "description": "Olahraga luar ruang dengan area keselamatan.",
+      "facilities": [
+        "Lapangan panahan",
+        "Area berkuda",
+        "Penyimpanan alat"
+      ],
+      "phase": 3,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_21",
+      "number": 21,
+      "name": "Pertanian & Perkebunan",
+      "type": "Agriculture",
+      "description": "Kebun produksi dan demonstrasi pertanian.",
+      "facilities": [
+        "Kebun buah",
+        "Kompos",
+        "Edukasi pertanian"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_22",
+      "number": 22,
+      "name": "Area Parkir",
+      "type": "Mobility",
+      "description": "Parkir terpusat di tepi kawasan.",
+      "facilities": [
+        "Parkir mobil",
+        "Parkir motor",
+        "Akses pejalan kaki"
+      ],
+      "phase": 1,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_23",
+      "number": 23,
+      "name": "Pintu Utama",
+      "type": "Mobility",
+      "description": "Gerbang dan titik informasi masuk.",
+      "facilities": [
+        "Gerbang",
+        "Pos informasi",
+        "Akses darurat"
+      ],
+      "phase": 1,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_24",
+      "number": 24,
+      "name": "Jalan Lingkar Luar",
+      "type": "Mobility",
+      "description": "Koridor sirkulasi dan akses layanan.",
+      "facilities": [
+        "Jalur kendaraan",
+        "Jalur servis",
+        "Penunjuk arah"
+      ],
+      "phase": 1,
+      "status": "Planning"
+    },
+    {
+      "id": "zone_25",
+      "number": 25,
+      "name": "Utilitas & Pengelolaan Sampah",
+      "type": "Utilities",
+      "description": "Zona utilitas dan pengelolaan sampah.",
+      "facilities": [
+        "Pemilahan sampah",
+        "Pengomposan",
+        "Utilitas kawasan"
+      ],
+      "phase": 2,
+      "status": "Planning"
+    }
+  ],
+  "disclaimer": "Seluruh zona adalah gagasan konseptual. Lokasi, luas, biaya, kelayakan, kepemilikan tanah, perizinan dan jadwal belum diverifikasi."
+}

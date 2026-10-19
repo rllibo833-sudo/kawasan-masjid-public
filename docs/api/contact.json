@@ -1,0 +1,6 @@
+{
+  "type": "static-site-contact",
+  "status": "mailto-only",
+  "email": "pusingcukdevprog@gmail.com",
+  "note": "GitHub Pages tidak menjalankan backend atau menyimpan form. Form membuka aplikasi email pengguna."
+}

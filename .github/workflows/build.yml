@@ -1,0 +1,48 @@
+name: Validate and publish GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate static site
+        run: |
+          test -f docs/index.html
+          test -f docs/assets/style.css
+          test -f docs/assets/script.js
+          test -f docs/assets/data.json
+          test -f docs/assets/masterplan-interactive.svg
+          python - <<'PY'
+          import json, pathlib, xml.etree.ElementTree as ET
+          root = pathlib.Path("docs")
+          data = json.loads((root / "assets/data.json").read_text())
+          assert len(data["zones"]) == 25
+          assert len({z["id"] for z in data["zones"]}) == 25
+          ET.parse(root / "sitemap.xml")
+          ET.parse(root / "assets/masterplan-interactive.svg")
+          for lang in ("id", "en", "ar"):
+              assert (root / f"articles/intro-{lang}.html").is_file()
+          print("Validated 25 zones, multilingual articles, sitemap and SVG.")
+          PY
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,30 +1,19 @@
-# Kawasan Masjid — Ruang Belajar Islam
+# Kawasan Masjid 1000 Hektare
 
-Situs publik ini berfokus pada konten edukatif tentang Islam, akhlak, dan literasi digital: memeriksa sumber hadis, memahami konteks ayat Al-Qur’an, menilai kredibilitas konten dakwah, dan menggunakan internet secara bertanggung jawab.
+Website publik untuk visi konseptual ekosistem terpadu: ibadah, pendidikan, ekonomi komunitas, teknologi, dan keberlanjutan.
+
+**Status:** konsep dan ideasi; bukan proyek yang telah dibangun atau disahkan.
 
 ## Situs
-
 https://rllibo833-sudo.github.io/kawasan-masjid-public/
 
-## Isi utama
+## Struktur
+- `index.html`: pengarah ke website publik.
+- `docs/`: situs GitHub Pages.
+- `docs/assets/data.json`: data 25 zona konsep.
+- `docs/assets/masterplan-interactive.svg`: diagram masterplan interaktif.
+- `docs/articles/`: pengantar Bahasa Indonesia, English, dan العربية.
+- `.github/workflows/build.yml`: validasi dan deploy otomatis.
 
-- Panduan belajar Islam di era digital
-- Artikel pemeriksaan hadis dan ayat Al-Qur’an
-- Tabayyun, adab berdiskusi, dan literasi digital keluarga
-- Cara menilai sumber belajar serta konten dakwah
-- Kebijakan privasi dan kanal email untuk koreksi
-
-## Batas layanan
-
-Situs ini adalah situs konten statis yang diterbitkan melalui GitHub Pages. Situs tidak menyediakan akun, formulir intake, backend aplikasi, atau penyimpanan data operasional. Pesan hanya dikirim jika pengunjung secara sukarela menghubungi email pengelola.
-
-Materi bersifat edukatif, bukan fatwa. Sumber perlu ditelusuri dan konteks diperiksa; konten ini tidak menggantikan pembelajaran bersama guru atau ulama.
-
-## Pengembangan
-
-- src/articles.js menyimpan data artikel.
-- src/main.jsx menyajikan halaman pembelajaran.
-- docs/articles/ menyimpan naskah artikel sumber.
-- docs/ berisi keluaran GitHub Pages dan metadata SEO.
-
-Pemeriksaan lokal: npm run check.
+## Catatan
+Website ini statis. Form kontak membuka aplikasi email; tidak ada penyimpanan pesan atau backend formulir. Masterplan adalah ilustrasi konseptual, bukan dokumen ukur atau konstruksi.
